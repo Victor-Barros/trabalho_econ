@@ -5,7 +5,7 @@ function valor_Presente(taxa, periodos, valorFuturo){
     return valorFuturo/Math.pow(1+(taxa), periodos);
 }
 function taxa_(valorFuturo, valorPresente, tempo){
-    return (Math.pow(valorFuturo/valorPresente, tempo)-1)*100;
+    return (Math.pow(valorFuturo/valorPresente, tempo)-1);
 }
 function valor_Uniforme(valorFuturo, taxa, tempo){
     return valorFuturo/((1+taxa)*((Math.pow(1+taxa, tempo)-1)/taxa));

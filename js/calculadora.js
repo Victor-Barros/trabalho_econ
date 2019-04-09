@@ -20,7 +20,6 @@ function calcular() {
     var valorFuturo = parseFloat($("#input_7").val());
     var valorPresente = parseFloat($("#input_6").val());
 	var tempo = parseFloat($("#input_3").val());
-	var valorUniforme = parseFloat($("#input_8").val());
 	
 	if (tipo_de_calculo == 1) {	
         tempo = periodo_Montante(valorPresente, taxa, valorFuturo);
@@ -39,4 +38,26 @@ function calcular() {
         $("#input_7").val(valorFuturo.toFixed(2));
 	}
 	return;
+}
+
+function setFormRequiredInputs() {
+    var selected = $("input[name=q5_tipoDe]:checked").data().calcvalue;
+    $("#input_3").attr("required","required"); //tempo
+    $("#input_4").attr("required","required"); //taxa
+    $("#input_6").attr("required","required"); //VP
+    $("#input_7").attr("required","required"); //VF
+    
+    if (selected == 1) {
+        $("#input_3").removeAttr("required"); //tempo
+        $("#input_3").val("");
+    }else if (selected == 2) {
+        $("#input_6").removeAttr("required"); //VP
+    }else if (selected == 3) {
+        $("#input_6").removeAttr("required"); //VP
+        $("#input_6").val("");
+    }else if (selected == 4){
+        $("#input_7").removeAttr("required"); //VF
+        $("#input_7").val("");
+    }
+    return;
 }

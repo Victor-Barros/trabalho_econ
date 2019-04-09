@@ -25,7 +25,7 @@ function calcular() {
         tempo = periodo_Montante(valorPresente, taxa, valorFuturo);
         $("#input_3").val(tempo.toFixed(4));
 	}
-	else if (tipo_de_calculo == 2 && valorFuturo.length > 0 && taxa.length > 0 && tempo.length > 0) {
+	else if (tipo_de_calculo == 2 && valorFuturo > 0 && taxa > 0 && tempo > 0) {
         valorUniforme = valor_Uniforme(valorFuturo, taxa, tempo);
         alert("Valor uniforme calculado: "+valorUniforme.toFixed(2));
 	}

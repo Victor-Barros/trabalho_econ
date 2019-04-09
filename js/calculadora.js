@@ -37,6 +37,10 @@ function calcular() {
         valorFuturo = valor_Futuro(taxa, tempo, valorPresente);
         $("#input_7").val(valorFuturo.toFixed(2));
 	}
+    else if (tipo_de_calculo=5){
+        taxa = taxa_(valorFuturo,valorPresente,tempo);
+        $("#input_4").val((taxa*100).toFixed(2));
+    }
 	return;
 }
 
@@ -58,6 +62,10 @@ function setFormRequiredInputs() {
     }else if (selected == 4){
         $("#input_7").removeAttr("required"); //VF
         $("#input_7").val("");
+    }
+    else if(selected == 5){
+        $("#input_4").removeAttr("required");
+        $("#input_4").val("");
     }
     return;
 }
